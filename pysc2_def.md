@@ -1,0 +1,13 @@
+### obs.observation[]
+* cargo  
+* minimap  
+* game_loop  
+* available_actions  
+* screen  
+* control_groups  
+* multi_select  
+* cargo_slots_available  
+* player  
+* single_select  
+* build_queue  
+* score_cumulative
