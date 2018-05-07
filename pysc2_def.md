@@ -45,7 +45,7 @@ available_actions
  333/Patrol_screen  
  334/Patrol_minimap  
   13/Attack_minimap  
- 274/HoldPosition_quick
+ 274/HoldPosition_quick  
  451/Smart_screen   
  452/Smart_minimap   
  453/Stop_quick   
