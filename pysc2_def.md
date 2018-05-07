@@ -36,7 +36,7 @@ available_actions
    1/move_camera      
    2/select_point  
    3/select_rect   
-   4/select_control_group 
+   4/select_control_group  
    5/select_unit       
    7/select_army    
   12/Attack_screen  
