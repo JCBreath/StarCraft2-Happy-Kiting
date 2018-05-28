@@ -193,6 +193,38 @@ class SmartAgent(object):
         if flee_y > 83:
             flee_y = 83
 
+        x = unit_loc[0]
+        y = unit_loc[1]
+        
+        # reaching corners
+        if x < 8 and y < 8:
+            print("TOP_LEFT")
+            flee_x = 3
+            flee_y = 79
+        elif x < 8 and y > 54:
+            print("BOTTOM_LEFT")
+            flee_x = 79
+            flee_y = 79
+        elif x > 75 and y < 8:
+            print("TOP_RIGHT")
+            flee_x = 3
+            flee_y = 3
+        elif x > 75 and y > 54:
+            print("BOTTOM_RIGHT")
+            flee_x = 79
+            flee_y = 3
+        elif x < 8 and dy < 5:
+            flee_x = 3
+            flee_y = 79
+        elif x > 75 and dy < 5:
+            flee_x = 79
+            flee_y = 79
+        elif y < 8 and dx < 5:
+            flee_x = 3
+            flee_y = 3
+        elif y > 75 and dx < 5:
+            flee_x = 79
+            flee_y = 79
 
         flee_point.append(flee_x)
         flee_point.append(flee_y)
