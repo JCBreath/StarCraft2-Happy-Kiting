@@ -3,7 +3,6 @@ import math
 import time
 import random
 import matplotlib.pyplot as plt
-from algorithms.dqn import DeepQNetwork
 from pysc2.lib import actions
 
 _NO_OP = actions.FUNCTIONS.no_op.id
@@ -26,11 +25,6 @@ _NOT_QUEUED = [0]
 _QUEUED = [1]
 
 ATTACK_TARGET = 'attacktarget'
-MOVE_UP = 'moveup'
-MOVE_DOWN = 'movedown'
-MOVE_LEFT = 'moveleft'
-MOVE_RIGHT = 'moveright'
-ACTION_SELECT_UNIT = 'selectunit'
 MOVE = 'move'
 
 smart_actions = [
@@ -80,7 +74,7 @@ class SmartAgent(object):
 
         self.acted = True
 
-        if distance > 10:
+        if distance > 8:
             if _ATTACK_SCREEN in obs.observation["available_actions"]:
                 if enemy_count >= 1:
                     return actions.FunctionCall(_ATTACK_SCREEN, [_NOT_QUEUED, enemy_loc[0]])  # x,y => col,row
@@ -182,8 +176,8 @@ class SmartAgent(object):
         
         vecLen = math.sqrt(dx*dx + dy*dy)
         
-        dx = dx / vecLen * 10
-        dy = dy / vecLen * 10
+        dx = dx / vecLen * 12
+        dy = dy / vecLen * 12
 
 
         flee_x = unit_loc[0] - dx
@@ -215,7 +209,7 @@ class SmartAgent(object):
 
     def plot_enemy_hp(self, path, save):
         plt.plot(np.arange(len(self.enemy_hp)), self.enemy_hp)
-        print("Agent winning rate: " + str(self.enemy_hp.count(0) * 100 / self.episodes) + "%")
+        print("Agent winning rate: " + str(self.enemy_hp.count(0) * 100 / (self.episodes - 1)) + "%")
         plt.ylabel('enemy hp')
         plt.xlabel('training steps')
         if save:
