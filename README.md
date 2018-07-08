@@ -20,3 +20,6 @@ without any commandline parameters
 
 #### Demo Video
 [Watch](https://youtu.be/Y0VgNXDzDSY "Happy Kiting")
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Y0VgNXDzDSY
+" target="_blank"><img src="http://img.youtube.com/vi/Y0VgNXDzDSY/0.jpg" 
+alt="Happy Kiting - ECS 170" width="240" height="180" border="10" /></a>
